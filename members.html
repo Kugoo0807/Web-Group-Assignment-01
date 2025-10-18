@@ -21,84 +21,76 @@
             </nav>
         </header>
         <main class="main-member">
-            <section class="intro-member">
-                <h2>Giới thiệu thành viên</h2>
+            <section class="intro-member card">
+                <h2>👨🏻‍🤝‍👨🏻 Giới thiệu thành viên</h2>
                 <p>
-                    Nhóm chúng tôi gồm 5 thành viên là sinh viên năm 3 của Trường Đại học Khoa học Tự nhiên TP.HCM.
-                    Mỗi người đảm nhận một vai trò khác nhau trong dự án, cùng nhau học hỏi và phát triển kỹ năng về lập trình,
-                    thiết kế web, cũng như làm việc nhóm để hoàn thiện sản phẩm một cách tốt nhất.
+                Nhóm chúng tôi gồm 5 thành viên là sinh viên năm 3 của Trường Đại học Khoa học Tự nhiên TP.HCM.
+                Mỗi người đảm nhận một vai trò khác nhau trong dự án, cùng nhau học hỏi và phát triển kỹ năng về lập trình,
+                thiết kế web, cũng như làm việc nhóm để hoàn thiện sản phẩm một cách tốt nhất.
                 </p>
             </section>
 
             <section class="members-container">
 
-                <div class="member-card">
-                    <img src="img/nam.jpg" alt="Nguyễn Nhật Nam" class="member-image">
-                    <div class="member-info">
-                        <h3>Nguyễn Nhật Nam</h3>
-                        <p>MSSV: 23127092</p>
-                        <p>Sinh viên năm 3, Trường Đại học Khoa học Tự nhiên TP.HCM.</p>
-                        <p>Kĩ năng: C++, HTML, Python,...</p>
-                    </div>
+                <!-- Member 1: image on right (default) -->
+                <article class="member-card card">
+                <div class="member-info">
+                    <h3 class="member-name">Nguyễn Nhật Nam</h3>
+                    <p class="member-id">MSSV: 23127092</p>
+                    <p class="member-desc">Sinh viên năm 3. Kĩ năng: C++, HTML, Python. Thích phát triển backend và giải thuật.</p>
                 </div>
+                <div class="member-media nam-img" style="background-image: url('img/nam.jpg');"></div>
+                </article>
 
-                <div class="member-card">
-                    <img src="img/phuc.jpg" alt="Lê Quang Phúc" class="member-image">
-                    <div class="member-info">
-                        <h3>Lê Quang Phúc</h3>
-                        <p>MSSV: 23127102</p>
-                        <p>Sinh viên năm 3, Trường Đại học Khoa học Tự nhiên TP.HCM.</p>
-                        <p>Kĩ năng: C++, HTML, Java, Javascript</p>
-                    </div>
+                <!-- Member 2: alternates to image left via CSS -->
+                <article class="member-card card">
+                <div class="member-info">
+                    <h3 class="member-name">Lê Quang Phúc</h3>
+                    <p class="member-id">MSSV: 23127102</p>
+                    <p class="member-desc">Sinh viên năm 3. Kĩ năng: Java, JavaScript. Chịu trách nhiệm frontend và UI/UX.</p>
                 </div>
+                <div class="member-media phuc-img" style="background-image: url('img/phuc.jpg');"></div>
+                </article>
 
-                <div class="member-card">
-                    <img src="img/khoa.jpg" alt="Nguyễn Quang Đăng Khoa" class="member-image">
-                    <div class="member-info">
-                        <h3>Nguyễn Quang Đăng Khoa</h3>
-                        <p>MSSV: 23127212</p>
-                        <p>Sinh viên năm 3, Trường Đại học Khoa học Tự nhiên TP.HCM.</p>
-                        <p>Kĩ năng: C++, HTML/CSS, Python, Java, Javascript</p>
-                    </div>
+                <article class="member-card card">
+                <div class="member-info">
+                    <h3 class="member-name">Nguyễn Quang Đăng Khoa</h3>
+                    <p class="member-id">MSSV: 23127212</p>
+                    <p class="member-desc">Sinh viên năm 3. Kĩ năng: Python, Java. Làm dữ liệu và xử lý file nhị phân.</p>
                 </div>
+                <div class="member-media khoa-img" style="background-image: url('img/khoa.jpg');"></div>
+                </article>
 
-                <div class="member-card">
-                    <img src="img/minh.jpg" alt="Đỗ Thành Minh" class="member-image">
-                    <div class="member-info">
-                        <h3>Đỗ Thành Minh</h3>
-                        <p>MSSV: 23127420</p>
-                        <p>Sinh viên năm 3, Trường Đại học Khoa học Tự nhiên TP.HCM.</p>
-                        <p>Kĩ năng: C++, HTML/CSS, Java, Javascript</p>
-                    </div>
+                <article class="member-card card">
+                <div class="member-info">
+                    <h3 class="member-name">Đỗ Thành Minh</h3>
+                    <p class="member-id">MSSV: 23127420</p>
+                    <p class="member-desc">Sinh viên năm 3. Kĩ năng: C++, HTML/CSS. Hỗ trợ tối ưu thuật toán và testing.</p>
                 </div>
+                <div class="member-media minh-img" style="background-image: url('img/minh.jpg');"></div>
+                </article>
 
-                <div class="member-card">
-                    <img src="img/toan.jpg" alt="Phạm Đức Toàn" class="member-image">
-                    <div class="member-info">
-                        <h3>Phạm Đức Toàn</h3>
-                        <p>MSSV: 23127540</p>
-                        <p>Sinh viên năm 3, Trường Đại học Khoa học Tự nhiên TP.HCM.</p>
-                        <p>Kĩ năng: C++, HTML/CSS, Python, Java</p>
-                    </div>
+                <article class="member-card card">
+                <div class="member-info">
+                    <h3 class="member-name">Phạm Đức Toàn</h3>
+                    <p class="member-id">MSSV: 23127540</p>
+                    <p class="member-desc">Sinh viên năm 3. Kĩ năng: C++, Python. Chịu trách nhiệm tích hợp và deploy.</p>
                 </div>
+                <div class="member-media toan-img" style="background-image: url('img/toan.jpg');"></div>
+                </article>
 
             </section>
 
-            <aside class="contact">
+            <aside class="contact card">
                 <h2>Thông tin liên hệ</h2>
                 <ul class="contact-list">
-                    <li> 
-                        📧 <a href="mailto:nqdkhoa23@clc.fitus.edu.vn">Email</a>
-                    </li>
-                    <li>
-                        💻 <a href="https://facebook.com/kugoo0807" target="_blank">Facebook</a>
-                    </li>
-                    <li>
-                        🌐 <a href="https://github.com/Kugoo0807/Web-Group-Assignment-01" target="_blank">GitHub</a>
-                    </li>
+                <li>📧 <a href="mailto:nqdkhoa23@clc.fitus.edu.vn">Email</a></li>
+                <li>💻 <a href="https://facebook.com/kugoo0807" target="_blank">Facebook</a></li>
+                <li>🌐 <a href="https://github.com/Kugoo0807/Web-Group-Assignment-01" target="_blank">GitHub</a></li>
                 </ul>
             </aside>
         </main>
+
         <footer>© 23127092 - 23127102 - 23127212 - 23127420 - 23127540. All rights reserved.</footer>
     </body>
 </html>
