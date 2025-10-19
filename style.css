@@ -365,34 +365,6 @@ footer {
     border-left: 5px solid var(--tertiary);
     padding-left: 10px;
   }
-
-  /* Tắt hiệu ứng */
-  .member-card::after {
-    animation: none;
-    opacity: 0;
-    background: none;
-  }
-  .member-card {
-    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-    transform: none;
-  }
-  .member-card:hover {
-    transform: none;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-  }
-  .main-home > section:hover,
-  .main-member > section.intro-member:hover {
-    transform: none;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-  }
-  .main-member .contact-list li:hover {
-    transform: none;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-  }
-  .main-member .contact-list a:hover {
-    transform: none;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-  }
 }
 
 @media (max-width: 480px){
@@ -428,4 +400,46 @@ footer {
   .member-info { padding: 12px; }
   .member-name { font-size: 1rem; }
   .member-desc { font-size: 0.85rem; }
+}
+
+/* ====== Tắt hiệu ứng ====== */
+@media (max-width: 1024px), (prefers-reduced-motion: reduce) {
+  .member-card,
+  .member-card:hover {
+    animation: none !important;
+    transform: none !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12) !important;
+    transition: none !important;
+  }
+  .member-card::after {
+    animation: none !important;
+    opacity: 0 !important;
+    background: none !important;
+    transition: none !important;
+  }
+  .main-home > section,
+  .main-member > section.intro-member {
+    transform: none !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12) !important;
+    transition: none !important;
+  }
+  .main-home > section:hover,
+  .main-member > section.intro-member:hover {
+    transform: none !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12) !important;
+  }
+  .main-member .contact-list li,
+  .main-member .contact-list li:hover,
+  .main-member .contact-list a,
+  .main-member .contact-list a:hover {
+    transform: none !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12) !important;
+    transition: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
