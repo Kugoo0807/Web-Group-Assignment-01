@@ -170,7 +170,154 @@ footer {
   border-radius: 8px;
 }
 
-/* RESPONSIVE */
+/* ------ MEMBERS -----*/
+
+/* FORMAT GIỚI THIỆU, TTLH */
+.intro-member,
+.contact {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.intro-member h2,
+.contact h2 {
+  color: var(--secondary);
+  margin-bottom: 12px;
+  border-left: 5px solid var(--tertiary);
+  padding-left: 10px;
+}
+
+.intro-member p {
+  color: var(--text-800);
+  line-height: 1.6;
+}
+
+.contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact li {
+  margin-bottom: 8px;
+  color: var(--text-800);
+}
+
+.contact a {
+  color: var(--nav-link);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact a:hover {
+  color: var(--nav-hover);
+}
+
+/* Main layout */
+.main-member {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 100px;
+  padding-bottom: 40px;
+}
+
+/* Member cards */
+.members-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.member-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: var(--shadow-1);
+  transition: transform .18s ease, box-shadow .18s ease;
+  aspect-ratio: 3 / 4;
+  min-height: 0;
+  flex: 0 0 calc(33.333% - 12px);
+}
+
+.member-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-2);
+}
+
+.member-media {
+  flex: 0 0 65%;
+  width: 100%;
+  height: 65%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+}
+
+.member-info {
+  flex: 0 0 35%;
+  width: 100%;
+  height: 35%;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  text-align: left;
+  background: var(--bg, #ffffff);
+}
+
+.members-container .member-card:nth-child(even) {
+  flex-direction: column;
+}
+
+.nam-img,
+.phuc-img,
+.khoa-img,
+.minh-img,
+.toan-img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.nam-img { background-position: center 20%; }
+.phuc-img { background-position: center 20%; }
+.khoa-img { background-position: center 20%; }
+.minh-img { background-position: center; }
+.toan-img { background-position: center 80%; }
+
+.member-name {
+  position: relative;
+  margin: 0 0 6px 0;
+  color: var(--primary);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+.member-id {
+  margin: 0 0 8px 0;
+  color: var(--text-800);
+  font-weight: 600;
+}
+.member-desc {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-800);
+  line-height: 1.5;
+}
+
+/* RESPONSIVE HOME */
 @media (max-width: 1200px){
   
 }
@@ -185,4 +332,113 @@ footer {
 
 @media (max-width: 480px){
   .main-home { padding: 12px; padding-top: 120px; }
+}
+
+/* RESPONSIVE MEMBERS */
+@media (max-width: 992px) {
+  .main-member { 
+    padding: 24px; 
+    padding-top: 100px; 
+  }
+}
+
+@media (max-width: 1024px) {
+  .member-card { 
+    flex: 0 0 calc(50% - 9px);
+    aspect-ratio: 4 / 5; 
+  }
+}
+
+@media (max-width: 768px) {
+  .main-member {
+    padding: 20px;
+    padding-top: 100px;
+  }
+  
+  .members-container { 
+    gap: 16px; 
+  }
+  
+  .member-card { 
+    flex: 0 0 100%; 
+    aspect-ratio: 5 / 6; 
+  }
+  
+  .member-info { 
+    padding: 16px; 
+    text-align: center; 
+  }
+  
+  .member-name { 
+    text-align: center; 
+  }
+  
+  .intro-member,
+  .contact {
+    padding: 16px;
+    text-align: left;
+  }
+
+  .intro-member h2,
+  .contact h2 {
+    color: var(--secondary);
+    margin-bottom: 12px;
+    border-left: 5px solid var(--tertiary);
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-member {
+    padding: 16px;
+    padding-top: 100px;
+  }
+  
+  .members-container { 
+    gap: 14px; 
+  }
+  
+  .member-card { 
+    aspect-ratio: 4 / 5;
+  }
+  
+  .member-info { 
+    padding: 14px; 
+  }
+  
+  .member-name { 
+    font-size: 1.1rem; 
+  }
+  
+  .member-desc {
+    font-size: 0.9rem;
+  }
+  
+  .intro-member,
+  .contact {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .main-member {
+    padding: 12px;
+    padding-top: 100px;
+  }
+  
+  .members-container { 
+    gap: 12px; 
+  }
+  
+  .member-info { 
+    padding: 12px; 
+  }
+  
+  .member-name { 
+    font-size: 1rem; 
+  }
+  
+  .member-desc {
+    font-size: 0.85rem;
+  }
 }
