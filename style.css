@@ -380,6 +380,19 @@ footer {
     transform: none;
     box-shadow: 0 3px 8px rgba(0,0,0,0.12);
   }
+  .main-home > section:hover,
+  .main-member > section.intro-member:hover {
+    transform: none;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  }
+  .main-member .contact-list li:hover {
+    transform: none;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  }
+  .main-member .contact-list a:hover {
+    transform: none;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  }
 }
 
 @media (max-width: 480px){
