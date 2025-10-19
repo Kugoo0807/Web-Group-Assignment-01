@@ -31,6 +31,11 @@ h2 {
   margin-bottom: 10px;
 }
 
+.intro-member p {
+  color: var(--text-800);
+  line-height: 1.6;
+}
+
 /* ===== BỐ CỤC CHUNG ====== */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
@@ -92,12 +97,11 @@ footer {
 }
 
 /* MAIN */
-.main-home {
+.main-home, .main-member {
   display: flex;
   flex-direction: column;
   padding: 100px;
   padding-bottom: 0;
-  border-radius: 10px;
 }
 
 .main-home > .subtitle {
@@ -109,7 +113,9 @@ footer {
 
 /* SECTION, ASIDE */
 .main-home > section,
-.main-home > aside {
+.main-home > aside,
+.main-member > section.intro-member,
+.main-member > aside {
   margin-bottom: 40px;
   background: #ffffff;
   padding: 16px;
@@ -170,70 +176,35 @@ footer {
   border-radius: 8px;
 }
 
-/* ------ MEMBERS -----*/
+/* ====== MEMBERS ====== */
 
-/* FORMAT GIỚI THIỆU, TTLH */
-.intro-member,
-.contact {
+/* CONTACT */
+.main-member .contact-list li {
   background: #ffffff;
-  padding: 16px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid var(--secondary);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin: 10px 14px;
+  box-shadow: var(--shadow-1);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
 }
 
-.intro-member h2,
-.contact h2 {
-  color: var(--secondary);
-  margin-bottom: 12px;
-  border-left: 5px solid var(--tertiary);
-  padding-left: 10px;
-}
-
-.intro-member p {
-  color: var(--text-800);
-  line-height: 1.6;
-}
-
-.contact ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.contact li {
-  margin-bottom: 8px;
-  color: var(--text-800);
-}
-
-.contact a {
-  color: var(--nav-link);
+.main-member .contact-list a {
+  color: var(--primary);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
+  transition: color .2s ease, text-decoration .2s ease;
 }
 
-.contact a:hover {
-  color: var(--nav-hover);
-}
-
-/* Main layout */
-.main-member {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  padding: 100px;
-  padding-bottom: 40px;
-}
-
-/* Member cards */
+/* CARD */
 .members-container {
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
   justify-content: center;
   align-items: stretch;
+  margin-bottom: 40px;
 }
-
 .member-card {
   display: flex;
   flex-direction: column;
@@ -242,30 +213,14 @@ footer {
   background: #ffffff;
   box-shadow: var(--shadow-1);
   transition: transform .18s ease, box-shadow .18s ease;
-  aspect-ratio: 3 / 4;
   min-height: 0;
   flex: 0 0 calc(33.333% - 12px);
 }
 
-.member-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-2);
-}
-
-.member-media {
-  flex: 0 0 65%;
-  width: 100%;
-  height: 65%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: block;
-}
-
+/* INFO */
 .member-info {
-  flex: 0 0 35%;
+  flex: 1;
   width: 100%;
-  height: 35%;
   padding: 16px 18px;
   display: flex;
   flex-direction: column;
@@ -274,30 +229,9 @@ footer {
   text-align: left;
   background: var(--bg, #ffffff);
 }
-
 .members-container .member-card:nth-child(even) {
   flex-direction: column;
 }
-
-.nam-img,
-.phuc-img,
-.khoa-img,
-.minh-img,
-.toan-img {
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: block;
-}
-
-.nam-img { background-position: center 20%; }
-.phuc-img { background-position: center 20%; }
-.khoa-img { background-position: center 20%; }
-.minh-img { background-position: center; }
-.toan-img { background-position: center 80%; }
-
 .member-name {
   position: relative;
   margin: 0 0 6px 0;
@@ -317,67 +251,112 @@ footer {
   line-height: 1.5;
 }
 
-/* RESPONSIVE HOME */
+/* IMAGE */
+.member-media {
+  aspect-ratio: 4 / 3;
+  flex: 0 0 65%;
+  width: 100%;
+  height: 65%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+}
+.nam-img,
+.phuc-img,
+.khoa-img,
+.minh-img,
+.toan-img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+}
+.nam-img  { background-position: center 20%; }
+.phuc-img { background-position: center 20%; }
+.khoa-img { background-position: center 20%; }
+.minh-img { background-position: center; }
+.toan-img { background-position: center 80%; }
+
+/* ====== ANIMATION ====== */
+
+/* SECTION */
+.main-home > section:hover,
+.main-member > section.intro-member:hover { transform: translateX(-10px); }
+
+/* CONTACT */
+.main-member .contact-list li:hover {
+  background-color: var(--details);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+}
+.main-member .contact-list a:hover {
+  color: var(--tertiary);
+  text-decoration: underline;
+}
+
+/* MEMBER CARD */
+.member-card {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+.member-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 200, 255, 0.10),
+    rgba(90, 40, 200, 0.12),
+    rgba(0, 255, 180, 0.08)
+  );
+  background-size: 220% 220%;
+  opacity: 0;
+  transition: opacity .4s ease, background-position 2s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+.member-card:hover /* Bóng đổ ánh xanh */ { 
+  transform: scale(1.02);
+  box-shadow:
+    0 0 20px rgba(0, 200, 255, 0.25),
+    0 0 40px rgba(90, 40, 200, 0.15),
+    0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.member-card:hover::after {
+  opacity: 1;
+  background-position: 100% 0;
+}
+
+/* ====== RESPONSIVE ====== */
 @media (max-width: 1200px){
-  
-}
-
-@media (max-width: 992px){
-  .main-home { padding: 16px; padding-top: 120px; }
-}
-
-@media (max-width: 768px){
-  
-}
-
-@media (max-width: 480px){
-  .main-home { padding: 12px; padding-top: 120px; }
-}
-
-/* RESPONSIVE MEMBERS */
-@media (max-width: 992px) {
-  .main-member { 
-    padding: 24px; 
-    padding-top: 100px; 
-  }
-}
-
-@media (max-width: 1024px) {
   .member-card { 
     flex: 0 0 calc(50% - 9px);
     aspect-ratio: 4 / 5; 
   }
 }
 
-@media (max-width: 768px) {
-  .main-member {
-    padding: 20px;
-    padding-top: 100px;
-  }
+@media (max-width: 992px){
+  html { font-size: 16px; }
+  .main-home, .main-member { padding: 16px; padding-top: 100px; }
+
+  .main-home > section,
+  .main-home > aside,
+  .main-member > section.intro-member,
+  .main-member > aside,
+  .members-container { margin-bottom: 36px; }
+}
+
+@media (max-width: 768px){
+  html { font-size: 15px; }
+  .members-container {  gap: 16px; }
   
-  .members-container { 
-    gap: 16px; 
-  }
-  
-  .member-card { 
-    flex: 0 0 100%; 
-    aspect-ratio: 5 / 6; 
-  }
-  
-  .member-info { 
-    padding: 16px; 
-    text-align: center; 
-  }
-  
-  .member-name { 
-    text-align: center; 
-  }
-  
-  .intro-member,
-  .contact {
-    padding: 16px;
-    text-align: left;
-  }
+  .member-card { flex: 0 0 100%; aspect-ratio: 5 / 6; }
+  .member-info { padding: 16px; text-align: center; }
+  .member-name { text-align: center; }
 
   .intro-member h2,
   .contact h2 {
@@ -386,59 +365,54 @@ footer {
     border-left: 5px solid var(--tertiary);
     padding-left: 10px;
   }
+
+  /* Tắt hiệu ứng */
+  .member-card::after {
+    animation: none;
+    opacity: 0;
+    background: none;
+  }
+  .member-card {
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    transform: none;
+  }
+  .member-card:hover {
+    transform: none;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  }
 }
 
-@media (max-width: 480px) {
-  .main-member {
-    padding: 16px;
-    padding-top: 100px;
-  }
+@media (max-width: 480px){
+  html { font-size: 14px; }
+  .main-home, .main-member { padding: 12px; padding-top: 120px; }
+
+  .main-home > section,
+  .main-home > aside,
+  .main-member > section.intro-member,
+  .main-member > aside,
+  .members-container { margin-bottom: 32px; }
   
-  .members-container { 
-    gap: 14px; 
-  }
-  
-  .member-card { 
-    aspect-ratio: 4 / 5;
-  }
-  
-  .member-info { 
-    padding: 14px; 
-  }
-  
-  .member-name { 
-    font-size: 1.1rem; 
-  }
-  
-  .member-desc {
-    font-size: 0.9rem;
-  }
-  
-  .intro-member,
-  .contact {
-    padding: 14px;
-  }
+  .members-container { gap: 14px; }
+  .member-card { aspect-ratio: 4 / 5; }
+
+  .member-info { padding: 14px; }
+  .member-name { font-size: 1.1rem; }
+  .member-desc { font-size: 0.9rem; }
 }
 
 @media (max-width: 360px) {
-  .main-member {
-    padding: 12px;
-    padding-top: 100px;
-  }
+  html { font-size: 13px; }
+  .main-home, .main-member { padding: 12px; padding-top: 100px; }
+
+  .main-home > section,
+  .main-home > aside,
+  .main-member > section.intro-member,
+  .main-member > aside,
+  .members-container { margin-bottom: 30px; }
   
-  .members-container { 
-    gap: 12px; 
-  }
+  .members-container { gap: 12px; }
   
-  .member-info { 
-    padding: 12px; 
-  }
-  
-  .member-name { 
-    font-size: 1rem; 
-  }
-  
-  .member-desc {
-    font-size: 0.85rem;
-  }
+  .member-info { padding: 12px; }
+  .member-name { font-size: 1rem; }
+  .member-desc { font-size: 0.85rem; }
 }
